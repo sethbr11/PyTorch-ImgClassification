@@ -40,7 +40,7 @@ def train_model(config, validate_with_images=False):
         print(f"Epoch {epoch+1}/{config['epochs']}, Loss: {total_loss/len(train_loader):.4f}")
         
         # Run validation
-        validate(model, test_loader, device, validate_with_images)
+        validate(model, test_loader, device, epoch+1, validate_with_images)
 
     # Evaluate model
     model.eval()

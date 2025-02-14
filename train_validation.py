@@ -6,7 +6,7 @@ import torch.nn.functional as F
 
 from config import get_class_names
 
-def validate(model, test_loader, device, validate_with_images=False):
+def validate(model, test_loader, device, epoch, validate_with_images=False):
     class_names = get_class_names()
     selected_images, predicted, actual, final_loss = run_validation(model, test_loader, device)
     predicted_classes = [class_names[p] for p in predicted]
@@ -17,7 +17,7 @@ def validate(model, test_loader, device, validate_with_images=False):
     if validate_with_images:
         if not plt.get_backend().lower().startswith('agg'):
             fig, axes = plt.subplots(1, 2, figsize=(6, 3), dpi=150)  # Small size to match image resolution
-            fig.canvas.manager.set_window_title('Validation Results')  # Set the window title
+            fig.canvas.manager.set_window_title(f'Validation Results - Epoch {epoch}')  # Set the window title
             for i, ax in enumerate(axes):
                 # Denormalize and permute for display
                 img = selected_images[i] * 0.5 + 0.5  # Assuming normalization was (0.5, 0.5)

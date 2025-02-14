@@ -76,6 +76,44 @@ python train.py --h
 - Experiment with different configurations and hyperparameters.
 - Understand the inner workings of Vision Transformers.
 
+## Model Improvement Attempts
+
+### Attempt 1: Adjusting Hyperparameters
+
+The first idea for improving the model was to adjust the config hyperparameters. The parameters were changed from:
+
+```python
+'img_size': 32,  # CIFAR-10 images are 32x32
+'patch_size': 4,  # Each patch will be 4x4 pixels
+'embed_dim': 64,  # Size of the embedding vector
+'num_heads': 4,   # Multi-head attention heads
+'num_layers': 6,  # Transformer encoder layers
+'num_classes': 10,  # CIFAR-10 has 10 classes
+'batch_size': 64, # Number of images in each batch
+'epochs': 5, # And epoch is a full pass through the dataset
+'lr': 3e-4 # Learning rate—3e-4 is a common choice
+```
+
+...to:
+
+```python
+'img_size': 32,  # CIFAR-10 images are 32x32
+'patch_size': 4,  # Each patch will be 4x4 pixels
+'embed_dim': 128,  # Increased size of the embedding vector
+'num_heads': 8,   # Increased number of multi-head attention heads
+'num_layers': 12,  # Increased number of transformer encoder layers
+'num_classes': 10,  # CIFAR-10 has 10 classes
+'batch_size': 128, # Increased number of images in each batch
+'epochs': 20, # Increased number of epochs
+'lr': 1e-4 # Adjusted learning rate
+```
+
+![Training loop output for the first adjustment, yielding longer training times and no improvement in accuracy.](resources/adjustment1.png)
+
+These adjustments made training take much longer, and unfortunately did nothing to improve the accuracy of the model. Darn.
+
+### Attempt 2: --
+
 ## Contributing
 
 Feel free to clone or fork the repository if you'd like to implement your own solutions and modifications.

@@ -10,7 +10,7 @@ def get_config():
         'num_layers': 6,  # Transformer encoder layers
         'num_classes': 10,  # CIFAR-10 has 10 classes
         'batch_size': 64, # Number of images in each batch
-        'epochs': 20, # And epoch is a full pass through the dataset
+        'epochs': 5, # And epoch is a full pass through the dataset
         'lr': 3e-4 # Learning rate—3e-4 is a common choice
     }
     
