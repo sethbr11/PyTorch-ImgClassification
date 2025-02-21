@@ -5,9 +5,9 @@ import torch.nn.functional as F
 from torch.nn.init import trunc_normal_
 
 class VisionTransformer(nn.Module):
-    def __init__(self, img_size, patch_size, embed_dim, num_heads, num_layers, num_classes):
+    def __init__(self, img_size, patch_size, embed_dim, num_heads, num_layers, num_classes, dropout_rate):
         super(VisionTransformer, self).__init__()
-        
+
         self.num_patches = (img_size // patch_size) ** 2
         self.patch_size = patch_size
         self.embed_dim = embed_dim
@@ -15,29 +15,30 @@ class VisionTransformer(nn.Module):
         # Conv2d-based Patch Embedding (Better Stability)
         self.patch_embed = nn.Conv2d(3, embed_dim, kernel_size=patch_size, stride=patch_size)
 
-        # Class Token & Positional Embedding (Fixed Initialization)
+        # Class Token (Learnable) & Positional Embedding (Learnable)
         self.cls_token = nn.Parameter(torch.zeros(1, 1, embed_dim))
         self.pos_embed = nn.Parameter(torch.zeros(1, self.num_patches + 1, embed_dim))
-        
+
         # Transformer with Pre-Normalization (More Stable Training)
         encoder_layer = nn.TransformerEncoderLayer(embed_dim, num_heads, dim_feedforward=embed_dim*4, 
-                                                   dropout=0.1, activation="gelu", batch_first=True)
+                                                   dropout=dropout_rate, activation="gelu", batch_first=True)
         self.transformer = nn.TransformerEncoder(encoder_layer, num_layers)
         
-        # Classification Head (LayerNorm before Output Improves Stability)
+        # LayerNorm after each transformer block for stability
         self.norm = nn.LayerNorm(embed_dim)
+
+        # Dropout and Classification Head
+        self.dropout = nn.Dropout(dropout_rate)
         self.mlp_head = nn.Linear(embed_dim, num_classes)
 
         # Initialize Weights
         self._init_weights()
 
-    # Initialize Weights with Truncated Normal Distribution
     def _init_weights(self):
         trunc_normal_(self.pos_embed, std=0.02)
         trunc_normal_(self.cls_token, std=0.02)
         self.apply(self._init_mlp_weights)
 
-    # Initialize Weights for MLP Head
     def _init_mlp_weights(self, m):
         if isinstance(m, nn.Linear):
             trunc_normal_(m.weight, std=0.02)
@@ -58,20 +59,24 @@ class VisionTransformer(nn.Module):
         cls_tokens = self.cls_token.expand(B, -1, -1)  # [B, 1, embed_dim]
         x = torch.cat((cls_tokens, x), dim=1)  # [B, num_patches+1, embed_dim]
 
-        # Positional Encoding
+        # Positional Encoding (Learnable)
         x = x + self.pos_embed[:, :x.shape[1], :]
 
         # Transformer Encoder with Pre-Normalization
         x = self.transformer(x)
 
-        # Classification Head
-        x = self.norm(x[:, 0, :])  # Use CLS Token
+        # Apply LayerNorm after transformer blocks
+        x = self.norm(x)
+
+        # Use Global Average Pooling (GAP) for classification
+        x = x.mean(dim=1)  # Apply Global Average Pooling (GAP) across the sequence
+        x = self.dropout(x)  # Apply dropout before the final layer
         return self.mlp_head(x)
 
 def build_transformer(config):
     return VisionTransformer(
         config['img_size'], config['patch_size'], config['embed_dim'], config['num_heads'],
-        config['num_layers'], config['num_classes']
+        config['num_layers'], config['num_classes'], config['dropout_rate']
     )
     
 class SimpleCNN(nn.Module):

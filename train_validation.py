@@ -5,10 +5,10 @@ import matplotlib.pyplot as plt
 import torch.nn.functional as F
 
 from config import get_class_names
-
-def validate(model, test_loader, device, epoch, validate_with_images=False):
+            
+def validate(model, val_loader, device, epoch, validate_with_images=False):
     class_names = get_class_names()
-    selected_images, predicted, actual, final_loss = run_validation(model, test_loader, device)
+    selected_images, predicted, actual, final_loss = run_validation(model, val_loader, device)
     predicted_classes = [class_names[p] for p in predicted]
     actual_classes = [class_names[a] for a in actual]
     print(f"Validation - Predicted: {predicted_classes}, Actual: {actual_classes}, Loss: {final_loss:.4f}")
@@ -32,23 +32,43 @@ def validate(model, test_loader, device, epoch, validate_with_images=False):
             plt.show()
         else:
             print("No display found. Skipping image display.")
+    
+    return final_loss
 
-def run_validation(model, test_loader, device):
+def run_validation(model, val_loader, device):
     model.eval()
     criterion = nn.CrossEntropyLoss()
     total_loss = 0
+    all_images = []
+    all_labels = []
 
-    # Randomly select two images from the test_loader
-    all_images, all_labels = next(iter(test_loader))
+    # Iterate through the entire validation set
+    for images, labels in val_loader:
+        images, labels = images.to(device), labels.to(device)
+        with torch.no_grad():
+            outputs = model(images)
+            loss = criterion(outputs, labels)
+            total_loss += loss.item()
+
+            # Collect all images and labels for loss calculation
+            all_images.append(images)
+            all_labels.append(labels)
+
+    # Flatten the lists to obtain all images and labels
+    all_images = torch.cat(all_images, dim=0)
+    all_labels = torch.cat(all_labels, dim=0)
+
+    # Randomly select two images from the validation set
     indices = random.sample(range(len(all_images)), 2)
     selected_images = all_images[indices].to(device)
     selected_labels = all_labels[indices].to(device)
 
+    # Get the predictions for the selected images
     with torch.no_grad():
         outputs = model(selected_images)
-        loss = criterion(outputs, selected_labels)
-        total_loss += loss.item()
         _, predicted = torch.max(outputs, 1)
 
-    avg_loss = total_loss
+    # Calculate the average loss
+    avg_loss = total_loss / len(val_loader)  # Average over all batches in the val_loader
+
     return selected_images.cpu(), predicted.cpu().numpy(), selected_labels.cpu().numpy(), avg_loss

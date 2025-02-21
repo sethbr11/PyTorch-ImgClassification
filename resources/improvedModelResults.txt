@@ -1,0 +1,416 @@
+--------------ViT MODEL TRAINING--------------
+> Dynamic epoch adjustment is enabled.
+Epoch 1/100, Loss: 2.1012, LR: 0.000280
+Validation - Predicted: ['airplane', 'truck'], Actual: ['ship', 'dog'], Loss: 2.0163
+Epoch 2/100, Loss: 1.9201, LR: 0.000460
+Validation - Predicted: ['ship', 'horse'], Actual: ['automobile', 'automobile'], Loss: 1.8604
+Epoch 3/100, Loss: 1.8046, LR: 0.000640
+Validation - Predicted: ['dog', 'horse'], Actual: ['frog', 'cat'], Loss: 1.7472
+Epoch 4/100, Loss: 1.7039, LR: 0.000820
+Validation - Predicted: ['airplane', 'frog'], Actual: ['airplane', 'cat'], Loss: 1.6180
+Epoch 5/100, Loss: 1.5757, LR: 0.001000
+Validation - Predicted: ['frog', 'cat'], Actual: ['frog', 'dog'], Loss: 1.4800
+Epoch 6/100, Loss: 1.4589, LR: 0.001000
+Validation - Predicted: ['frog', 'frog'], Actual: ['cat', 'bird'], Loss: 1.4262
+Epoch 7/100, Loss: 1.3859, LR: 0.000999
+Validation - Predicted: ['truck', 'frog'], Actual: ['ship', 'frog'], Loss: 1.3905
+Epoch 8/100, Loss: 1.3240, LR: 0.000998
+Validation - Predicted: ['automobile', 'deer'], Actual: ['airplane', 'frog'], Loss: 1.2771
+Epoch 9/100, Loss: 1.2764, LR: 0.000996
+Validation - Predicted: ['deer', 'bird'], Actual: ['deer', 'deer'], Loss: 1.2797
+Epoch 10/100, Loss: 1.2340, LR: 0.000993
+Validation - Predicted: ['deer', 'ship'], Actual: ['deer', 'ship'], Loss: 1.2153
+Epoch 11/100, Loss: 1.2047, LR: 0.000990
+Validation - Predicted: ['frog', 'bird'], Actual: ['truck', 'bird'], Loss: 1.2256
+Epoch 12/100, Loss: 1.1777, LR: 0.000987
+Validation - Predicted: ['deer', 'airplane'], Actual: ['deer', 'airplane'], Loss: 1.1741
+Epoch 13/100, Loss: 1.1454, LR: 0.000983
+Validation - Predicted: ['horse', 'deer'], Actual: ['horse', 'deer'], Loss: 1.1794
+Epoch 14/100, Loss: 1.1303, LR: 0.000978
+Validation - Predicted: ['automobile', 'truck'], Actual: ['automobile', 'truck'], Loss: 1.1047
+Epoch 15/100, Loss: 1.1044, LR: 0.000973
+Validation - Predicted: ['dog', 'dog'], Actual: ['cat', 'cat'], Loss: 1.0891
+Epoch 16/100, Loss: 1.0768, LR: 0.000967
+Validation - Predicted: ['ship', 'airplane'], Actual: ['cat', 'airplane'], Loss: 1.1338
+Epoch 17/100, Loss: 1.0626, LR: 0.000961
+Validation - Predicted: ['truck', 'bird'], Actual: ['truck', 'ship'], Loss: 1.0422
+Epoch 18/100, Loss: 1.0440, LR: 0.000955
+Validation - Predicted: ['horse', 'deer'], Actual: ['horse', 'cat'], Loss: 1.0461
+Epoch 19/100, Loss: 1.0330, LR: 0.000947
+Validation - Predicted: ['horse', 'airplane'], Actual: ['horse', 'airplane'], Loss: 1.0347
+Epoch 20/100, Loss: 1.0137, LR: 0.000940
+Validation - Predicted: ['bird', 'cat'], Actual: ['automobile', 'cat'], Loss: 1.0090
+Epoch 21/100, Loss: 0.9988, LR: 0.000932
+Validation - Predicted: ['airplane', 'dog'], Actual: ['airplane', 'cat'], Loss: 1.0267
+Epoch 22/100, Loss: 0.9920, LR: 0.000923
+Validation - Predicted: ['horse', 'airplane'], Actual: ['horse', 'cat'], Loss: 1.0144
+Epoch 23/100, Loss: 0.9714, LR: 0.000914
+Validation - Predicted: ['automobile', 'truck'], Actual: ['automobile', 'truck'], Loss: 0.9993
+Epoch 24/100, Loss: 0.9711, LR: 0.000905
+Validation - Predicted: ['frog', 'airplane'], Actual: ['frog', 'automobile'], Loss: 1.0059
+Epoch 25/100, Loss: 0.9541, LR: 0.000895
+Validation - Predicted: ['ship', 'horse'], Actual: ['ship', 'deer'], Loss: 0.9571
+Epoch 26/100, Loss: 0.9433, LR: 0.000884
+Validation - Predicted: ['cat', 'airplane'], Actual: ['horse', 'airplane'], Loss: 0.9676
+Epoch 27/100, Loss: 0.9308, LR: 0.000874
+Validation - Predicted: ['deer', 'horse'], Actual: ['dog', 'bird'], Loss: 0.9660
+Epoch 28/100, Loss: 0.9287, LR: 0.000862
+Validation - Predicted: ['dog', 'truck'], Actual: ['cat', 'truck'], Loss: 0.9067
+Epoch 29/100, Loss: 0.9111, LR: 0.000851
+Validation - Predicted: ['bird', 'ship'], Actual: ['cat', 'ship'], Loss: 0.9301
+Epoch 30/100, Loss: 0.9032, LR: 0.000839
+Validation - Predicted: ['ship', 'ship'], Actual: ['truck', 'ship'], Loss: 0.9409
+Epoch 31/100, Loss: 0.8945, LR: 0.000826
+Validation - Predicted: ['dog', 'deer'], Actual: ['horse', 'cat'], Loss: 0.8862
+Epoch 32/100, Loss: 0.8857, LR: 0.000814
+Validation - Predicted: ['frog', 'cat'], Actual: ['cat', 'dog'], Loss: 0.9187
+Epoch 33/100, Loss: 0.8775, LR: 0.000801
+Validation - Predicted: ['truck', 'airplane'], Actual: ['horse', 'airplane'], Loss: 0.9170
+Epoch 34/100, Loss: 0.8709, LR: 0.000787
+Validation - Predicted: ['frog', 'dog'], Actual: ['frog', 'cat'], Loss: 0.9264
+Epoch 35/100, Loss: 0.8624, LR: 0.000774
+Validation - Predicted: ['dog', 'horse'], Actual: ['cat', 'horse'], Loss: 0.9145
+Epoch 36/100, Loss: 0.8553, LR: 0.000760
+Validation - Predicted: ['bird', 'deer'], Actual: ['bird', 'cat'], Loss: 0.9212
+Epoch 37/100, Loss: 0.8485, LR: 0.000745
+Validation - Predicted: ['automobile', 'horse'], Actual: ['ship', 'horse'], Loss: 0.8940
+Epoch 38/100, Loss: 0.8309, LR: 0.000731
+Validation - Predicted: ['horse', 'bird'], Actual: ['horse', 'bird'], Loss: 0.8906
+Epoch 39/100, Loss: 0.8344, LR: 0.000716
+Validation - Predicted: ['dog', 'dog'], Actual: ['dog', 'dog'], Loss: 0.8534
+Epoch 40/100, Loss: 0.8221, LR: 0.000701
+Validation - Predicted: ['truck', 'truck'], Actual: ['truck', 'deer'], Loss: 0.8661
+Epoch 41/100, Loss: 0.8241, LR: 0.000686
+Validation - Predicted: ['deer', 'deer'], Actual: ['dog', 'deer'], Loss: 0.8528
+Epoch 42/100, Loss: 0.8052, LR: 0.000670
+Validation - Predicted: ['cat', 'frog'], Actual: ['cat', 'frog'], Loss: 0.8479
+Epoch 43/100, Loss: 0.8044, LR: 0.000655
+Validation - Predicted: ['bird', 'truck'], Actual: ['bird', 'truck'], Loss: 0.8426
+Epoch 44/100, Loss: 0.7942, LR: 0.000639
+Validation - Predicted: ['automobile', 'ship'], Actual: ['automobile', 'ship'], Loss: 0.8448
+Epoch 45/100, Loss: 0.7924, LR: 0.000623
+Validation - Predicted: ['frog', 'cat'], Actual: ['frog', 'cat'], Loss: 0.8303
+Epoch 46/100, Loss: 0.7869, LR: 0.000607
+Validation - Predicted: ['cat', 'truck'], Actual: ['dog', 'truck'], Loss: 0.8664
+Epoch 47/100, Loss: 0.7792, LR: 0.000591
+Validation - Predicted: ['airplane', 'frog'], Actual: ['airplane', 'frog'], Loss: 0.8526
+Epoch 48/100, Loss: 0.7768, LR: 0.000575
+Validation - Predicted: ['horse', 'automobile'], Actual: ['horse', 'automobile'], Loss: 0.8241
+Epoch 49/100, Loss: 0.7709, LR: 0.000558
+Validation - Predicted: ['automobile', 'horse'], Actual: ['automobile', 'horse'], Loss: 0.8039
+Epoch 50/100, Loss: 0.7573, LR: 0.000542
+Validation - Predicted: ['truck', 'cat'], Actual: ['horse', 'truck'], Loss: 0.8200
+Epoch 51/100, Loss: 0.7532, LR: 0.000525
+Validation - Predicted: ['frog', 'cat'], Actual: ['deer', 'cat'], Loss: 0.8185
+Epoch 52/100, Loss: 0.7488, LR: 0.000509
+Validation - Predicted: ['dog', 'dog'], Actual: ['dog', 'dog'], Loss: 0.8002
+Epoch 53/100, Loss: 0.7424, LR: 0.000492
+Validation - Predicted: ['deer', 'ship'], Actual: ['deer', 'ship'], Loss: 0.7988
+Epoch 54/100, Loss: 0.7392, LR: 0.000476
+Validation - Predicted: ['automobile', 'frog'], Actual: ['automobile', 'frog'], Loss: 0.8297
+Epoch 55/100, Loss: 0.7347, LR: 0.000459
+Validation - Predicted: ['horse', 'horse'], Actual: ['horse', 'horse'], Loss: 0.7791
+Epoch 56/100, Loss: 0.7287, LR: 0.000443
+Validation - Predicted: ['bird', 'deer'], Actual: ['airplane', 'deer'], Loss: 0.8126
+Epoch 57/100, Loss: 0.7202, LR: 0.000426
+Validation - Predicted: ['horse', 'automobile'], Actual: ['horse', 'dog'], Loss: 0.7654
+Epoch 58/100, Loss: 0.7197, LR: 0.000410
+Validation - Predicted: ['horse', 'cat'], Actual: ['horse', 'cat'], Loss: 0.7921
+Epoch 59/100, Loss: 0.7163, LR: 0.000394
+Validation - Predicted: ['bird', 'dog'], Actual: ['bird', 'dog'], Loss: 0.8463
+Potential overfitting detected at epoch 59. Validation loss increased significantly while training loss is still decreasing.
+Epoch 60/100, Loss: 0.7091, LR: 0.000378
+Validation - Predicted: ['dog', 'dog'], Actual: ['dog', 'dog'], Loss: 0.7803
+Epoch 61/100, Loss: 0.7046, LR: 0.000362
+Validation - Predicted: ['truck', 'ship'], Actual: ['automobile', 'ship'], Loss: 0.7497
+Epoch 62/100, Loss: 0.6947, LR: 0.000346
+Validation - Predicted: ['dog', 'airplane'], Actual: ['dog', 'truck'], Loss: 0.7641
+Epoch 63/100, Loss: 0.6936, LR: 0.000331
+Validation - Predicted: ['dog', 'truck'], Actual: ['dog', 'truck'], Loss: 0.7625
+Epoch 64/100, Loss: 0.6914, LR: 0.000315
+Validation - Predicted: ['airplane', 'airplane'], Actual: ['airplane', 'airplane'], Loss: 0.7642
+Epoch 65/100, Loss: 0.6905, LR: 0.000300
+Validation - Predicted: ['airplane', 'ship'], Actual: ['airplane', 'ship'], Loss: 0.7574
+Epoch 66/100, Loss: 0.6795, LR: 0.000285
+Validation - Predicted: ['ship', 'automobile'], Actual: ['ship', 'automobile'], Loss: 0.7515
+Epoch 67/100, Loss: 0.6781, LR: 0.000270
+Validation - Predicted: ['bird', 'horse'], Actual: ['bird', 'horse'], Loss: 0.7390
+Epoch 68/100, Loss: 0.6716, LR: 0.000256
+Validation - Predicted: ['horse', 'truck'], Actual: ['horse', 'automobile'], Loss: 0.7658
+Epoch 69/100, Loss: 0.6649, LR: 0.000241
+Validation - Predicted: ['bird', 'ship'], Actual: ['deer', 'ship'], Loss: 0.7408
+Epoch 70/100, Loss: 0.6605, LR: 0.000227
+Validation - Predicted: ['automobile', 'horse'], Actual: ['automobile', 'truck'], Loss: 0.7459
+Epoch 71/100, Loss: 0.6556, LR: 0.000214
+Validation - Predicted: ['dog', 'deer'], Actual: ['cat', 'frog'], Loss: 0.7400
+Epoch 72/100, Loss: 0.6530, LR: 0.000200
+Validation - Predicted: ['ship', 'truck'], Actual: ['automobile', 'truck'], Loss: 0.7186
+Epoch 73/100, Loss: 0.6480, LR: 0.000187
+Validation - Predicted: ['automobile', 'frog'], Actual: ['automobile', 'frog'], Loss: 0.7420
+Epoch 74/100, Loss: 0.6457, LR: 0.000175
+Validation - Predicted: ['truck', 'horse'], Actual: ['truck', 'horse'], Loss: 0.7126
+Epoch 75/100, Loss: 0.6324, LR: 0.000162
+Validation - Predicted: ['truck', 'cat'], Actual: ['truck', 'cat'], Loss: 0.7472
+Epoch 76/100, Loss: 0.6331, LR: 0.000150
+Validation - Predicted: ['airplane', 'bird'], Actual: ['airplane', 'cat'], Loss: 0.7286
+Epoch 77/100, Loss: 0.6309, LR: 0.000139
+Validation - Predicted: ['truck', 'ship'], Actual: ['truck', 'ship'], Loss: 0.7507
+Epoch 78/100, Loss: 0.6310, LR: 0.000127
+Validation - Predicted: ['dog', 'bird'], Actual: ['deer', 'airplane'], Loss: 0.7182
+Epoch 79/100, Loss: 0.6276, LR: 0.000117
+Validation - Predicted: ['ship', 'dog'], Actual: ['ship', 'cat'], Loss: 0.7145
+Epoch 80/100, Loss: 0.6267, LR: 0.000106
+Validation - Predicted: ['truck', 'bird'], Actual: ['automobile', 'bird'], Loss: 0.7118
+Epoch 81/100, Loss: 0.6187, LR: 0.000096
+Validation - Predicted: ['deer', 'cat'], Actual: ['deer', 'truck'], Loss: 0.7210
+Epoch 82/100, Loss: 0.6152, LR: 0.000087
+Validation - Predicted: ['frog', 'cat'], Actual: ['frog', 'ship'], Loss: 0.7193
+Epoch 83/100, Loss: 0.6086, LR: 0.000078
+Validation - Predicted: ['dog', 'ship'], Actual: ['dog', 'ship'], Loss: 0.7152
+Epoch 84/100, Loss: 0.6053, LR: 0.000069
+Validation - Predicted: ['truck', 'dog'], Actual: ['truck', 'truck'], Loss: 0.7206
+Epoch 85/100, Loss: 0.6107, LR: 0.000061
+Validation - Predicted: ['frog', 'truck'], Actual: ['frog', 'truck'], Loss: 0.7214
+Epoch 86/100, Loss: 0.6063, LR: 0.000054
+Validation - Predicted: ['automobile', 'ship'], Actual: ['automobile', 'ship'], Loss: 0.7059
+Epoch 87/100, Loss: 0.6055, LR: 0.000046
+Validation - Predicted: ['airplane', 'cat'], Actual: ['airplane', 'cat'], Loss: 0.7067
+Epoch 88/100, Loss: 0.5959, LR: 0.000040
+Validation - Predicted: ['bird', 'automobile'], Actual: ['bird', 'automobile'], Loss: 0.7267
+Epoch 89/100, Loss: 0.5960, LR: 0.000034
+Validation - Predicted: ['dog', 'ship'], Actual: ['horse', 'ship'], Loss: 0.7128
+Epoch 90/100, Loss: 0.6019, LR: 0.000028
+Validation - Predicted: ['deer', 'frog'], Actual: ['deer', 'frog'], Loss: 0.6814
+Epoch 91/100, Loss: 0.5925, LR: 0.000023
+Validation - Predicted: ['airplane', 'deer'], Actual: ['airplane', 'deer'], Loss: 0.7172
+Potential overfitting detected at epoch 91. Validation loss increased significantly while training loss is still decreasing.
+Epoch 92/100, Loss: 0.5928, LR: 0.000018
+Validation - Predicted: ['truck', 'automobile'], Actual: ['truck', 'automobile'], Loss: 0.6820
+Epoch 93/100, Loss: 0.5992, LR: 0.000014
+Validation - Predicted: ['frog', 'dog'], Actual: ['frog', 'dog'], Loss: 0.6954
+Epoch 94/100, Loss: 0.5912, LR: 0.000011
+Validation - Predicted: ['dog', 'cat'], Actual: ['dog', 'cat'], Loss: 0.7097
+Epoch 95/100, Loss: 0.5903, LR: 0.000008
+Validation - Predicted: ['ship', 'frog'], Actual: ['ship', 'frog'], Loss: 0.6855
+Epoch 96/100, Loss: 0.5929, LR: 0.000005
+Validation - Predicted: ['horse', 'frog'], Actual: ['horse', 'frog'], Loss: 0.7081
+Epoch 97/100, Loss: 0.5930, LR: 0.000003
+Validation - Predicted: ['ship', 'ship'], Actual: ['ship', 'ship'], Loss: 0.7041
+Epoch 98/100, Loss: 0.5876, LR: 0.000002
+Validation - Predicted: ['truck', 'truck'], Actual: ['truck', 'horse'], Loss: 0.7050
+Epoch 99/100, Loss: 0.5871, LR: 0.000001
+Validation - Predicted: ['truck', 'horse'], Actual: ['automobile', 'cat'], Loss: 0.6987
+Epoch 100/100, Loss: 0.5861, LR: 0.000001
+Validation - Predicted: ['deer', 'frog'], Actual: ['bird', 'deer'], Loss: 0.6904
+Test Accuracy of the best model: 80.01%
+
+--------------CNN Model Training--------------
+> Using CNN instead of ViT model.
+> Dynamic epoch adjustment is enabled.
+Epoch 1/100, Loss: 1.9429, LR: 0.000280
+Validation - Predicted: ['automobile', 'ship'], Actual: ['automobile', 'ship'], Loss: 1.7790
+Epoch 2/100, Loss: 1.6860, LR: 0.000460
+Validation - Predicted: ['cat', 'automobile'], Actual: ['dog', 'automobile'], Loss: 1.6374
+Epoch 3/100, Loss: 1.5385, LR: 0.000640
+Validation - Predicted: ['cat', 'ship'], Actual: ['dog', 'ship'], Loss: 1.4453
+Epoch 4/100, Loss: 1.3935, LR: 0.000820
+Validation - Predicted: ['truck', 'automobile'], Actual: ['truck', 'automobile'], Loss: 1.3173
+Epoch 5/100, Loss: 1.2819, LR: 0.001000
+Validation - Predicted: ['automobile', 'cat'], Actual: ['ship', 'cat'], Loss: 1.2231
+Epoch 6/100, Loss: 1.1877, LR: 0.001000
+Validation - Predicted: ['cat', 'airplane'], Actual: ['ship', 'ship'], Loss: 1.1235
+Epoch 7/100, Loss: 1.1089, LR: 0.000999
+Validation - Predicted: ['horse', 'cat'], Actual: ['horse', 'cat'], Loss: 1.0880
+Epoch 8/100, Loss: 1.0498, LR: 0.000998
+Validation - Predicted: ['deer', 'bird'], Actual: ['frog', 'bird'], Loss: 1.0336
+Epoch 9/100, Loss: 0.9958, LR: 0.000996
+Validation - Predicted: ['horse', 'horse'], Actual: ['horse', 'deer'], Loss: 0.9711
+Epoch 10/100, Loss: 0.9627, LR: 0.000993
+Validation - Predicted: ['truck', 'deer'], Actual: ['truck', 'bird'], Loss: 0.9713
+Epoch 11/100, Loss: 0.9327, LR: 0.000990
+Validation - Predicted: ['ship', 'cat'], Actual: ['ship', 'dog'], Loss: 0.9329
+Epoch 12/100, Loss: 0.9056, LR: 0.000987
+Validation - Predicted: ['cat', 'horse'], Actual: ['dog', 'horse'], Loss: 0.9235
+Epoch 13/100, Loss: 0.8809, LR: 0.000983
+Validation - Predicted: ['ship', 'airplane'], Actual: ['ship', 'cat'], Loss: 0.9538
+Epoch 14/100, Loss: 0.8574, LR: 0.000978
+Validation - Predicted: ['airplane', 'truck'], Actual: ['airplane', 'truck'], Loss: 0.8807
+Epoch 15/100, Loss: 0.8363, LR: 0.000973
+Validation - Predicted: ['horse', 'airplane'], Actual: ['horse', 'airplane'], Loss: 0.8952
+Epoch 16/100, Loss: 0.8217, LR: 0.000967
+Validation - Predicted: ['bird', 'horse'], Actual: ['airplane', 'horse'], Loss: 0.8484
+Epoch 17/100, Loss: 0.8056, LR: 0.000961
+Validation - Predicted: ['automobile', 'deer'], Actual: ['automobile', 'cat'], Loss: 0.8757
+Epoch 18/100, Loss: 0.7952, LR: 0.000955
+Validation - Predicted: ['automobile', 'ship'], Actual: ['automobile', 'ship'], Loss: 0.8463
+Epoch 19/100, Loss: 0.7833, LR: 0.000947
+Validation - Predicted: ['automobile', 'cat'], Actual: ['automobile', 'cat'], Loss: 0.8451
+Epoch 20/100, Loss: 0.7646, LR: 0.000940
+Validation - Predicted: ['deer', 'automobile'], Actual: ['deer', 'automobile'], Loss: 0.8114
+Epoch 21/100, Loss: 0.7486, LR: 0.000932
+Validation - Predicted: ['airplane', 'cat'], Actual: ['airplane', 'cat'], Loss: 0.8087
+Epoch 22/100, Loss: 0.7425, LR: 0.000923
+Validation - Predicted: ['truck', 'truck'], Actual: ['horse', 'cat'], Loss: 0.8002
+Epoch 23/100, Loss: 0.7277, LR: 0.000914
+Validation - Predicted: ['frog', 'automobile'], Actual: ['deer', 'automobile'], Loss: 0.8304
+Epoch 24/100, Loss: 0.7152, LR: 0.000905
+Validation - Predicted: ['automobile', 'cat'], Actual: ['automobile', 'cat'], Loss: 0.7930
+Epoch 25/100, Loss: 0.7148, LR: 0.000895
+Validation - Predicted: ['airplane', 'automobile'], Actual: ['ship', 'automobile'], Loss: 0.7989
+Epoch 26/100, Loss: 0.7064, LR: 0.000884
+Validation - Predicted: ['deer', 'horse'], Actual: ['deer', 'horse'], Loss: 0.7805
+Epoch 27/100, Loss: 0.6965, LR: 0.000874
+Validation - Predicted: ['horse', 'cat'], Actual: ['horse', 'cat'], Loss: 0.7749
+Epoch 28/100, Loss: 0.6853, LR: 0.000862
+Validation - Predicted: ['automobile', 'frog'], Actual: ['automobile', 'frog'], Loss: 0.8115
+Epoch 29/100, Loss: 0.6854, LR: 0.000851
+Validation - Predicted: ['frog', 'dog'], Actual: ['frog', 'dog'], Loss: 0.7817
+Epoch 30/100, Loss: 0.6776, LR: 0.000839
+Validation - Predicted: ['bird', 'dog'], Actual: ['bird', 'dog'], Loss: 0.7700
+Epoch 31/100, Loss: 0.6614, LR: 0.000826
+Validation - Predicted: ['frog', 'bird'], Actual: ['frog', 'dog'], Loss: 0.7641
+Epoch 32/100, Loss: 0.6624, LR: 0.000814
+Validation - Predicted: ['ship', 'dog'], Actual: ['ship', 'cat'], Loss: 0.7159
+Epoch 33/100, Loss: 0.6547, LR: 0.000801
+Validation - Predicted: ['ship', 'truck'], Actual: ['ship', 'truck'], Loss: 0.7635
+Potential overfitting detected at epoch 33. Validation loss increased significantly while training loss is still decreasing.
+Epoch 34/100, Loss: 0.6425, LR: 0.000787
+Validation - Predicted: ['horse', 'frog'], Actual: ['dog', 'frog'], Loss: 0.7419
+Epoch 35/100, Loss: 0.6420, LR: 0.000774
+Validation - Predicted: ['deer', 'airplane'], Actual: ['deer', 'truck'], Loss: 0.7352
+Epoch 36/100, Loss: 0.6286, LR: 0.000760
+Validation - Predicted: ['horse', 'ship'], Actual: ['horse', 'ship'], Loss: 0.7627
+Epoch 37/100, Loss: 0.6252, LR: 0.000745
+Validation - Predicted: ['bird', 'ship'], Actual: ['frog', 'ship'], Loss: 0.7288
+Epoch 38/100, Loss: 0.6144, LR: 0.000731
+Validation - Predicted: ['dog', 'truck'], Actual: ['dog', 'truck'], Loss: 0.7237
+Epoch 39/100, Loss: 0.6105, LR: 0.000716
+Validation - Predicted: ['frog', 'bird'], Actual: ['frog', 'bird'], Loss: 0.7088
+Epoch 40/100, Loss: 0.6075, LR: 0.000701
+Validation - Predicted: ['truck', 'frog'], Actual: ['ship', 'frog'], Loss: 0.7217
+Epoch 41/100, Loss: 0.6088, LR: 0.000686
+Validation - Predicted: ['airplane', 'horse'], Actual: ['airplane', 'horse'], Loss: 0.7060
+Epoch 42/100, Loss: 0.5933, LR: 0.000670
+Validation - Predicted: ['deer', 'bird'], Actual: ['airplane', 'bird'], Loss: 0.6901
+Epoch 43/100, Loss: 0.5888, LR: 0.000655
+Validation - Predicted: ['frog', 'automobile'], Actual: ['frog', 'automobile'], Loss: 0.7261
+Potential overfitting detected at epoch 43. Validation loss increased significantly while training loss is still decreasing.
+Epoch 44/100, Loss: 0.5900, LR: 0.000639
+Validation - Predicted: ['automobile', 'truck'], Actual: ['automobile', 'truck'], Loss: 0.6933
+Epoch 45/100, Loss: 0.5737, LR: 0.000623
+Validation - Predicted: ['deer', 'dog'], Actual: ['deer', 'dog'], Loss: 0.6996
+Epoch 46/100, Loss: 0.5735, LR: 0.000607
+Validation - Predicted: ['airplane', 'truck'], Actual: ['airplane', 'truck'], Loss: 0.7020
+Epoch 47/100, Loss: 0.5744, LR: 0.000591
+Validation - Predicted: ['cat', 'dog'], Actual: ['cat', 'dog'], Loss: 0.7080
+Epoch 48/100, Loss: 0.5672, LR: 0.000575
+Validation - Predicted: ['dog', 'horse'], Actual: ['dog', 'horse'], Loss: 0.7264
+Epoch 49/100, Loss: 0.5628, LR: 0.000558
+Validation - Predicted: ['bird', 'bird'], Actual: ['bird', 'bird'], Loss: 0.6931
+Epoch 50/100, Loss: 0.5522, LR: 0.000542
+Validation - Predicted: ['horse', 'truck'], Actual: ['horse', 'truck'], Loss: 0.6733
+Epoch 51/100, Loss: 0.5441, LR: 0.000525
+Validation - Predicted: ['airplane', 'deer'], Actual: ['airplane', 'frog'], Loss: 0.6817
+Epoch 52/100, Loss: 0.5382, LR: 0.000509
+Validation - Predicted: ['dog', 'horse'], Actual: ['dog', 'horse'], Loss: 0.6853
+Epoch 53/100, Loss: 0.5364, LR: 0.000492
+Validation - Predicted: ['horse', 'bird'], Actual: ['horse', 'bird'], Loss: 0.6499
+Epoch 54/100, Loss: 0.5368, LR: 0.000476
+Validation - Predicted: ['dog', 'deer'], Actual: ['horse', 'deer'], Loss: 0.6761
+Epoch 55/100, Loss: 0.5199, LR: 0.000459
+Validation - Predicted: ['frog', 'dog'], Actual: ['deer', 'dog'], Loss: 0.6602
+Epoch 56/100, Loss: 0.5202, LR: 0.000443
+Validation - Predicted: ['airplane', 'bird'], Actual: ['airplane', 'cat'], Loss: 0.7069
+Epoch 57/100, Loss: 0.5185, LR: 0.000426
+Validation - Predicted: ['bird', 'horse'], Actual: ['bird', 'horse'], Loss: 0.6651
+Epoch 58/100, Loss: 0.5075, LR: 0.000410
+Validation - Predicted: ['deer', 'deer'], Actual: ['deer', 'deer'], Loss: 0.7094
+Potential overfitting detected at epoch 58. Validation loss increased significantly while training loss is still decreasing.
+Epoch 59/100, Loss: 0.5082, LR: 0.000394
+Validation - Predicted: ['frog', 'airplane'], Actual: ['frog', 'deer'], Loss: 0.6706
+Epoch 60/100, Loss: 0.5045, LR: 0.000378
+Validation - Predicted: ['frog', 'cat'], Actual: ['frog', 'cat'], Loss: 0.6631
+Epoch 61/100, Loss: 0.4965, LR: 0.000362
+Validation - Predicted: ['dog', 'dog'], Actual: ['dog', 'dog'], Loss: 0.6786
+Epoch 62/100, Loss: 0.4880, LR: 0.000346
+Validation - Predicted: ['ship', 'cat'], Actual: ['ship', 'cat'], Loss: 0.6579
+Epoch 63/100, Loss: 0.4843, LR: 0.000331
+Validation - Predicted: ['ship', 'dog'], Actual: ['ship', 'cat'], Loss: 0.6837
+Epoch 64/100, Loss: 0.4804, LR: 0.000315
+Validation - Predicted: ['ship', 'dog'], Actual: ['ship', 'deer'], Loss: 0.6528
+Epoch 65/100, Loss: 0.4780, LR: 0.000300
+Validation - Predicted: ['bird', 'ship'], Actual: ['automobile', 'ship'], Loss: 0.6416
+Epoch 66/100, Loss: 0.4717, LR: 0.000285
+Validation - Predicted: ['airplane', 'bird'], Actual: ['airplane', 'bird'], Loss: 0.6392
+Epoch 67/100, Loss: 0.4668, LR: 0.000270
+Validation - Predicted: ['truck', 'horse'], Actual: ['truck', 'horse'], Loss: 0.6411
+Epoch 68/100, Loss: 0.4672, LR: 0.000256
+Validation - Predicted: ['airplane', 'dog'], Actual: ['deer', 'airplane'], Loss: 0.6504
+Epoch 69/100, Loss: 0.4613, LR: 0.000241
+Validation - Predicted: ['frog', 'horse'], Actual: ['frog', 'horse'], Loss: 0.6719
+Epoch 70/100, Loss: 0.4551, LR: 0.000227
+Validation - Predicted: ['bird', 'dog'], Actual: ['bird', 'deer'], Loss: 0.6552
+Epoch 71/100, Loss: 0.4535, LR: 0.000214
+Validation - Predicted: ['horse', 'deer'], Actual: ['horse', 'cat'], Loss: 0.6533
+Epoch 72/100, Loss: 0.4511, LR: 0.000200
+Validation - Predicted: ['ship', 'cat'], Actual: ['airplane', 'cat'], Loss: 0.6497
+Epoch 73/100, Loss: 0.4476, LR: 0.000187
+Validation - Predicted: ['ship', 'truck'], Actual: ['ship', 'truck'], Loss: 0.6049
+Epoch 74/100, Loss: 0.4375, LR: 0.000175
+Validation - Predicted: ['truck', 'truck'], Actual: ['truck', 'airplane'], Loss: 0.6514
+Potential overfitting detected at epoch 74. Validation loss increased significantly while training loss is still decreasing.
+Epoch 75/100, Loss: 0.4383, LR: 0.000162
+Validation - Predicted: ['truck', 'horse'], Actual: ['truck', 'horse'], Loss: 0.6232
+Epoch 76/100, Loss: 0.4326, LR: 0.000150
+Validation - Predicted: ['cat', 'automobile'], Actual: ['cat', 'automobile'], Loss: 0.6337
+Epoch 77/100, Loss: 0.4282, LR: 0.000139
+Validation - Predicted: ['cat', 'bird'], Actual: ['cat', 'cat'], Loss: 0.6471
+Epoch 78/100, Loss: 0.4258, LR: 0.000127
+Validation - Predicted: ['deer', 'truck'], Actual: ['deer', 'truck'], Loss: 0.6317
+Epoch 79/100, Loss: 0.4283, LR: 0.000117
+Validation - Predicted: ['ship', 'deer'], Actual: ['ship', 'bird'], Loss: 0.6213
+Epoch 80/100, Loss: 0.4172, LR: 0.000106
+Validation - Predicted: ['airplane', 'ship'], Actual: ['airplane', 'ship'], Loss: 0.6471
+Epoch 81/100, Loss: 0.4202, LR: 0.000096
+Validation - Predicted: ['cat', 'airplane'], Actual: ['cat', 'ship'], Loss: 0.6304
+Epoch 82/100, Loss: 0.4167, LR: 0.000087
+Validation - Predicted: ['deer', 'frog'], Actual: ['deer', 'frog'], Loss: 0.6438
+Epoch 83/100, Loss: 0.4114, LR: 0.000078
+Validation - Predicted: ['ship', 'frog'], Actual: ['ship', 'frog'], Loss: 0.6055
+Epoch 84/100, Loss: 0.4114, LR: 0.000069
+Validation - Predicted: ['dog', 'automobile'], Actual: ['dog', 'automobile'], Loss: 0.6092
+Epoch 85/100, Loss: 0.4036, LR: 0.000061
+Validation - Predicted: ['frog', 'dog'], Actual: ['deer', 'dog'], Loss: 0.6054
+Epoch 86/100, Loss: 0.4034, LR: 0.000054
+Validation - Predicted: ['truck', 'airplane'], Actual: ['truck', 'airplane'], Loss: 0.5980
+Epoch 87/100, Loss: 0.4028, LR: 0.000046
+Validation - Predicted: ['cat', 'dog'], Actual: ['cat', 'dog'], Loss: 0.6427
+Potential overfitting detected at epoch 87. Validation loss increased significantly while training loss is still decreasing.
+Epoch 88/100, Loss: 0.4012, LR: 0.000040
+Validation - Predicted: ['automobile', 'horse'], Actual: ['automobile', 'horse'], Loss: 0.6235
+Epoch 89/100, Loss: 0.3971, LR: 0.000034
+Validation - Predicted: ['ship', 'dog'], Actual: ['ship', 'dog'], Loss: 0.6117
+Epoch 90/100, Loss: 0.3995, LR: 0.000028
+Validation - Predicted: ['bird', 'dog'], Actual: ['cat', 'bird'], Loss: 0.6139
+Epoch 91/100, Loss: 0.3905, LR: 0.000023
+Validation - Predicted: ['truck', 'dog'], Actual: ['truck', 'airplane'], Loss: 0.6049
+Epoch 92/100, Loss: 0.3976, LR: 0.000018
+Validation - Predicted: ['airplane', 'cat'], Actual: ['deer', 'cat'], Loss: 0.6006
+Epoch 93/100, Loss: 0.3907, LR: 0.000014
+Validation - Predicted: ['frog', 'automobile'], Actual: ['frog', 'automobile'], Loss: 0.6051
+Epoch 94/100, Loss: 0.3886, LR: 0.000011
+Validation - Predicted: ['deer', 'dog'], Actual: ['deer', 'dog'], Loss: 0.6405
+Potential overfitting detected at epoch 94. Validation loss increased significantly while training loss is still decreasing.
+Epoch 95/100, Loss: 0.3894, LR: 0.000008
+Validation - Predicted: ['truck', 'frog'], Actual: ['automobile', 'frog'], Loss: 0.6129
+Epoch 96/100, Loss: 0.3925, LR: 0.000005
+Validation - Predicted: ['horse', 'automobile'], Actual: ['horse', 'automobile'], Loss: 0.6151
+Epoch 97/100, Loss: 0.3920, LR: 0.000003
+Validation - Predicted: ['horse', 'horse'], Actual: ['horse', 'horse'], Loss: 0.6330
+Epoch 98/100, Loss: 0.3880, LR: 0.000002
+Validation - Predicted: ['airplane', 'horse'], Actual: ['airplane', 'horse'], Loss: 0.6141
+Epoch 99/100, Loss: 0.3864, LR: 0.000001
+Validation - Predicted: ['truck', 'horse'], Actual: ['truck', 'horse'], Loss: 0.6082
+Epoch 100/100, Loss: 0.3876, LR: 0.000001
+Validation - Predicted: ['horse', 'dog'], Actual: ['horse', 'dog'], Loss: 0.6134
+Test Accuracy of the best model: 85.14%
