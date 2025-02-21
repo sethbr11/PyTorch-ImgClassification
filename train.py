@@ -1,13 +1,11 @@
 # Train the model
-import os
-import sys
 import argparse
 import torch
 import torch.nn as nn
 import torch.optim as optim
 
 from config import get_config, get_device
-from model import build_transformer
+from model import build_transformer, build_cnn
 from dataset import get_dataloaders
 from train_validation import validate
 
@@ -17,13 +15,16 @@ def get_model(config):
     model = build_transformer(config)
     return model
 
-def train_model(config, validate_with_images=False):
+def train_model(config, validate_with_images=False, use_cnn=False):
     # Initialize model, loss, and optimizer
     device = get_device()
-    model = get_model(config).to(device)
+    if use_cnn:
+        model = build_cnn(config).to(device)
+    else:
+        model = get_model(config).to(device)
     train_loader, test_loader = get_dataloaders(config)
     criterion = nn.CrossEntropyLoss()
-    optimizer = optim.Adam(model.parameters(), lr=config['lr'])
+    optimizer = optim.AdamW(model.parameters(), lr=config['lr'], weight_decay=config['weight_decay'])
 
     # Training loop
     for epoch in range(config['epochs']):
@@ -60,11 +61,14 @@ if __name__ == '__main__':
     
     parser = argparse.ArgumentParser(description='Train a Transformer model.')
     parser.add_argument('--valimg', action='store_true', help='Show images used in validation')
+    parser.add_argument('--cnn', action='store_true', help='Use CNN instead of Transformer')
     args = parser.parse_args()
     
-    # Display validation images if the flag is set
+    # Feedback to the user based on the arguments
     if args.valimg:
         print("Validation images will be displayed after each epoch.")
+    if args.cnn:
+        print("Using CNN instead of ViT model.")
     
     config = get_config()
-    train_model(config, args.valimg)
+    train_model(config, args.valimg, args.cnn)
